@@ -1,13 +1,8 @@
 .catalog {
   display: grid;
   gap: $gap-width;
-  margin: 0 auto;
-
-  @each $amount, $med in $cards-per-row {
-    @media (min-width: $med) {
-      @include grid-template($amount);
-    }
-  }
+  justify-content: center;
+  grid-template-columns: repeat(1, $card-width);
 
   &__card {
     display: flex;
@@ -18,5 +13,17 @@
 
     border: 1px solid #ccc;
     border-radius: 5px;
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
   }
 }

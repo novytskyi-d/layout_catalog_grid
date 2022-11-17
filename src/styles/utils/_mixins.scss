@@ -1,4 +1,0 @@
-@mixin grid-template ($amount) {
-  max-width: $card-width * $amount + $gap-width * ($amount - 1);
-  grid-template-columns: repeat($amount, 200px);
-}
